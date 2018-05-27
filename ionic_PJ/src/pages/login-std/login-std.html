@@ -1,0 +1,95 @@
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>เข้าสู่ระบบ
+            <!--loginStd-->
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="center">
+        <img src="assets/imgs/kru.png" width="150" alt="">
+    </div>
+
+    <ion-segment [(ngModel)]="login_type" color="black" padding class="switcher">
+        <ion-segment-button value="loginStd" default>
+            <b>นักศึกษา</b>
+        </ion-segment-button>
+        <ion-segment-button value="loginTch">
+            <b>อาจารย์</b>
+        </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="login_type">
+
+        <div *ngSwitchCase="'loginStd'">
+            <form action="" novalidate #myForm="ngForm" (ngSubmit)="loginStd(myForm.value)">
+                <ion-list>
+
+                    <ion-item>
+                        <ion-label floating>รหัสนักศึกษา</ion-label>
+                        <ion-input ngModel type="text" name="std_code" required minlength="11" maxlength="11"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating>รหัสผ่าน</ion-label>
+                        <ion-input ngModel type="password" name="std_pass" required minlength="3"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <button [disabled]="myForm.invalid" ion-button large full>เข้าสู่รบบ</button>
+                    </ion-item>
+
+                </ion-list>
+            </form>
+        </div>
+
+        <div *ngSwitchCase="'loginTch'">
+            <form action="" novalidate #myForm="ngForm" (ngSubmit)="loginTch(myForm.value)">
+                <ion-list>
+
+                    <ion-item>
+                        <ion-label floating>รหัสอาจารย์</ion-label>
+                        <ion-input ngModel type="text" name="tch_code" required minlength="11" maxlength="11"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating>รหัสผ่าน</ion-label>
+                        <ion-input ngModel type="password" name="tch_pass" required minlength="3"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <button [disabled]="myForm.invalid" ion-button large full>เข้าสู่รบบ</button>
+                    </ion-item>
+
+                </ion-list>
+            </form>
+        </div>
+
+
+    </div>
+
+    <!--
+  <form action="" novalidate #myForm="ngForm" (ngSubmit)="loginStd(myForm.value)">
+    <ion-list>
+
+    <ion-item>
+        <ion-label floating>รหัสนักศึกษา</ion-label>
+        <ion-input ngModel type="text" name="std_code" required minlength="11" maxlength="11"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>รหัสผ่าน</ion-label>
+        <ion-input ngModel type="password" name="std_pass" required minlength="3"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <button [disabled]="myForm.invalid" ion-button large full>เข้าสู่รบบ</button>
+    </ion-item>
+    
+  </ion-list>
+  </form>-->
+</ion-content>

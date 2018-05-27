@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>หน้าแรก
+      <!--homeStudent-->
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of stdList">
+      <div class="centerqr">
+
+        <img src='http://stdweb.kru.ac.th/58123250101/API_PJ/img/{{item.std_code}}.png'>
+      </div>
+
+
+
+      <div text-center>
+        <h2>{{item.std_code}}</h2>
+        <h2>{{item.nameStd}}</h2>
+      </div>
+      <button (click)="showSub(item.std_code)" ion-button large round full>รายวิชาที่เรียน</button>
+
+    </ion-item>
+
+
+
+
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,40 @@
+<!--
+  Generated template for the CountCheckPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>การเข้าเรียน
+      <!--countCheck-->
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row style="background:#eeeeee">
+    <ion-col col-1></ion-col>
+    <ion-col col-6>รหัสนักศึกษา</ion-col>
+    <ion-col col-4>เข้าเรียน</ion-col>
+
+  </ion-row>
+  <ion-row>
+
+
+  </ion-row>
+
+  <ion-item *ngFor="let item of conutCheckList">
+
+    <ion-row (click)="score(item.chk_std)">
+
+      <ion-col col-8 align-self-center>{{item.chk_std}} : </ion-col>
+      <ion-col col-3 align-self-center>{{item.countcheck}}</ion-col>
+    
+    </ion-row>
+  </ion-item>
+</ion-content>

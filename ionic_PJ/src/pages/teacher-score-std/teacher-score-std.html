@@ -1,0 +1,44 @@
+<!--
+  Generated template for the TeacherScoreStdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>กรอกคะแนน
+      <!--teacherScoreStd-->
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form action="" novalidate #myForm="ngForm" (ngSubmit)="scoreStd(myForm.value)">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>คะแนนเก็บ</ion-label>
+        <ion-input type="number" ngModel type="number" name="ss_score"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>กลางภาค</ion-label>
+        <ion-input type="number" ngModel type="number" name="ss_mid"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>ปลายภาค</ion-label>
+        <ion-input type="number" ngModel type="number" name="ss_fn"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <button [disabled]="myForm.invalid" ion-button large full>ตกลง</button>
+      </ion-item>
+
+    </ion-list>
+  </form>
+</ion-content>

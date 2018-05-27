@@ -1,0 +1,63 @@
+<!--
+  Generated template for the StudentShowScorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>คะแนน
+      <!--studentShowScore-->
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of stdScoreList">
+      <ion-row>
+        <ion-col>
+          คะแนนเก็บ
+        </ion-col>
+        <ion-col>
+          : {{item.ss_score}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          คะแนนกลางภาค
+        </ion-col>
+        <ion-col>
+          : {{item.ss_score}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          คะแนนปลายภาค
+        </ion-col>
+        <ion-col>
+          : {{item.ss_fn}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          คะแนนรวม
+        </ion-col>
+        <ion-col>
+          : {{item.total}}
+        </ion-col>
+      </ion-row>
+
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

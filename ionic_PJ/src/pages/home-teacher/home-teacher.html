@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>รายวิชาที่สอน
+      <!--homeTeacher-->
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of SubjectList">
+      <p>ผู้สอน : {{item.ti_name}} {{item.tch_fname}} {{item.tch_lname}} </p>
+      <p hidden>รหัส : {{item.sub_id}} </p>
+      <p>รหัสวิชา : {{item.sub_code}} </p>
+      <p>ชื่อวิชา : {{item.sub_name}} </p>
+      <p>Sec : {{item.sub_sec}} </p>
+
+      <!--<button [disabled]="myForm.invalid"  ion-button color="danger">เช็คชื่อนักศึกษา </button>-->
+
+      <button (click)="scan(item.sub_id)" ion-button>เช็คชื่อนักศึกษา</button>
+      <button (click)="countcheck(item.sub_id)" ion-button>การเข้าเรียน</button>
+
+    </ion-item>
+
+
+
+
+  </ion-list>
+
+</ion-content>
